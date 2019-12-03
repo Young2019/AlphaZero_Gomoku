@@ -6,6 +6,7 @@ An implementation of the training pipeline of AlphaZero for Gomoku
 """
 
 from __future__ import print_function
+import os
 import random
 import numpy as np
 from collections import defaultdict, deque
@@ -191,5 +192,8 @@ class TrainPipeline():
 
 
 if __name__ == '__main__':
-    training_pipeline = TrainPipeline()
+    model_file = './best_policy.model'
+    if not os.path.exists(model_file):
+        model_file = None
+    training_pipeline = TrainPipeline(model_file=model_file)
     training_pipeline.run()
