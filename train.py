@@ -195,5 +195,5 @@ if __name__ == '__main__':
     model_file = './best_policy.model'
     if not os.path.exists(model_file):
         model_file = None
-    training_pipeline = TrainPipeline(model_file=model_file)
+    training_pipeline = TrainPipeline(init_model =model_file)
     training_pipeline.run()
